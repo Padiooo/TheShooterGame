@@ -8,6 +8,7 @@ namespace TheShooterGame.Server.Settings
     [Settings(nameof(GameSettings))]
     public class GameSettings
     {
+        public string MapFile { get; set; }
         public PlayerSettings Player { get; set; } = new();
         public BulletSetting Bullet { get; set; } = new();
         public WallSettings Wall { get; set; } = new();
