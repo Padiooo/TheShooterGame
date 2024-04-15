@@ -38,6 +38,9 @@ namespace TheShooterGame.Client.Networked
             };
             go.Components.Add(renderer);
 
+            var health = go.Components.Get<NetworkHealthComponent>();
+            go.Components.Add(new HealthRendererComponent(go, health));
+
             return go;
         }
 

@@ -21,6 +21,8 @@ namespace TheShooterGame.Shared.Components
         public NetworkHealthComponent(GameObject owner) : base(owner)
         {
             _hub = owner.Game.Services.GetService<Hub>();
+            AddNetVar(MaxHealth);
+            AddNetVar(Health);
         }
 
         protected override void ServerInit()
