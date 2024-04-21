@@ -10,6 +10,8 @@ using MonoLibrary.Engine.Network.Messages;
 using MonoLibrary.Engine.Services;
 using MonoLibrary.Engine.Services.Updates;
 
+using System.Net;
+
 using TheShooterGame.Client.Services;
 using TheShooterGame.Shared.Messages;
 using TheShooterGame.Shared.Networked;
@@ -47,6 +49,11 @@ namespace TheShooterGame.Client.Networked
             _dataService.PlayerData = message.Player;
             _dataService.BulletData = message.Bullet;
             _dataService.WallData = message.Wall;
+        }
+
+        protected override void HandleDiscoveryResponse(ServerDiscoveryResponse response)
+        {
+            base.HandleDiscoveryResponse(response);
         }
     }
 }

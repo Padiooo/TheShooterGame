@@ -45,6 +45,7 @@ namespace TheShooterGame.Client
             client = (NetClient)Services.GetRequiredService<INetworkManager>();
 
             client.Start();
+            client.Discover();
         }
 
         protected override void LoadContent()

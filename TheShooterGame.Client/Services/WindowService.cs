@@ -1,9 +1,9 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Xna.Framework;
 
 using MonoLibrary.Engine;
-using Microsoft.Extensions.DependencyInjection;
-using System.Linq;
+
+using System;
 
 namespace TheShooterGame.Client.Services
 {
@@ -23,7 +23,7 @@ namespace TheShooterGame.Client.Services
             game.Window.ClientSizeChanged += Window_ClientSizeChanged;
         }
 
-        private void Window_ClientSizeChanged(object sender, System.EventArgs e)
+        private void Window_ClientSizeChanged(object sender, EventArgs e)
         {
             _graphicsDeviceManager.PreferredBackBufferWidth = Width;
             _graphicsDeviceManager.PreferredBackBufferHeight = Height;

@@ -16,6 +16,8 @@ namespace TheShooterGame.Server.Services
         private readonly INetworkManager _networkManager;
         private readonly MapService _mapService;
 
+        private readonly Random rng = new Random();
+
         public GamePlayService(INetworkManager networkManager, Hub hub, MapService mapService, IUpdateLoop updateLoop)
         {
             _networkManager = networkManager;
@@ -36,7 +38,7 @@ namespace TheShooterGame.Server.Services
         {
             int networkIdentity = (int)state;
             var netIdentity = _networkManager.GetIdentity(networkIdentity);
-            _networkManager.Spawn(SpawnType.Player, _mapService.Spawns[Random.Shared.Next(_mapService.Spawns.Count)], netIdentity);
+            _networkManager.Spawn(SpawnType.Player, _mapService.Spawns[rng.Next(_mapService.Spawns.Count)], netIdentity);
             _chronos.Remove(chrono);
             chrono.OnTick -= PlayerRespawn;
         }
