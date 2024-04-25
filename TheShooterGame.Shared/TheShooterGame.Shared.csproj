@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -9,6 +9,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\MonoLibrary\MonoLibrary\MonoLibrary.csproj" />
     <ProjectReference Include="..\..\ShitGame\MonoLibrary\MonoLibrary.csproj" />
   </ItemGroup>
 </Project>
